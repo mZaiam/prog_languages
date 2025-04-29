@@ -7,7 +7,7 @@
 class NN{
 private:
 	std::vector<int> layers;
-	std::function<float(float)> activation;
+	std::function<std::vector<float>(std::vector<float>)> activation;
 	std::vector<std::vector<std::vector<float>>> W; // W[layer][output][input]
 	std::vector<std::vector<float>> b; // b[layer][output]
 
@@ -31,7 +31,7 @@ private:
 			// Initializing biases
 			for(int k = 0; k < output; k++){
 				vector.push_back(dist_bias(gen));
-			}; 
+			}
 			b.push_back(vector);
 
 			// Initializing matrices
@@ -39,17 +39,22 @@ private:
 				std::vector<float> row;
 				for(int j = 0; j < input; j++){
 					row.push_back(dist_matrix(gen));
-				};
+				}
 				matrix.push_back(row);
-			};
+			}
 			W.push_back(matrix);
-		};
-	};
+		}
+	}
 
 public:
-	
-};
+	std::vector<float> forward(std::vector<float> x){
+		if(x.size() != layers[0]){
+			throw std::invalid_argument("Input size does not match the NN definition."); 
+		}
 
-int main(){
-	return 0;
-}
+		
+
+
+
+	}
+};
