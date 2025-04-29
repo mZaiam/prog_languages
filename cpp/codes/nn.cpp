@@ -13,7 +13,7 @@ private:
 
 	void initialize_weights(){
 		std::random_device rd;
-        std::mt19937 gen(rd());
+	        std::mt19937 gen(rd());
 
 		W.clear();
 		b.clear();
