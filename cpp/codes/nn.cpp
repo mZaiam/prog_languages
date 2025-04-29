@@ -4,8 +4,14 @@
 #include <cmath>
 
 class NN{
-	private:
-		std::vector<float> weights;
+private:
+	std::vector<float> w1;
+	std::vector<float> b1;
+
+public:
+	NN(){
+			
+	}
 };
 
 int main(){
